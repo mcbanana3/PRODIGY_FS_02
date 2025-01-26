@@ -13,7 +13,7 @@ const port = process.env.PORT || 5000;
 app.use(bodyParser.json());
 
 const allowedOrigins = [
-  'http://localhost:5174',
+  'https://prodigy-fs-02-gamma.vercel.app/',
 ];
 
 const corsOptions = {
