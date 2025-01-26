@@ -12,7 +12,7 @@ const EmployeeList = () => {
       const token = localStorage.getItem("token");
       try {
         const response = await axios.get(
-          "http://localhost:5000/api/employees",
+          "https://prodigy-fs-02-z3wk.onrender.com/api/employees",
           {
             headers: {
               Authorization: `Bearer ${token}`,
@@ -36,11 +36,14 @@ const EmployeeList = () => {
       // Confirmation dialog
       const token = localStorage.getItem("token");
       try {
-        await axios.delete(`http://localhost:5000/api/employees/${id}`, {
-          headers: {
-            Authorization: `Bearer ${token}`,
-          },
-        });
+        await axios.delete(
+          `https://prodigy-fs-02-z3wk.onrender.com/api/employees/${id}`,
+          {
+            headers: {
+              Authorization: `Bearer ${token}`,
+            },
+          }
+        );
         setEmployees(employees.filter((employee) => employee._id !== id));
       } catch (error) {
         console.error("Error deleting employee", error);

@@ -13,7 +13,7 @@ const Login = () => {
     e.preventDefault();
     try {
       const response = await axios.post(
-        "http://localhost:5000/api/auth/login",
+        "https://prodigy-fs-02-z3wk.onrender.com/api/auth/login",
         { username: identifier, password }
       );
       login(response.data.token);

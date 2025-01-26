@@ -17,7 +17,7 @@ const EmployeeForm = () => {
       if (id) {
         try {
           const response = await axios.get(
-            `http://localhost:5000/api/employees/${id}`,
+            `https://prodigy-fs-02-z3wk.onrender.com/api/employees/${id}`,
             {
               headers: {
                 Authorization: `Bearer ${token}`,
@@ -48,7 +48,7 @@ const EmployeeForm = () => {
       const employeeData = { name, position, department, salary };
       if (id) {
         await axios.put(
-          `http://localhost:5000/api/employees/${id}`,
+          `https://prodigy-fs-02-z3wk.onrender.com/api/employees/${id}`,
           employeeData,
           {
             headers: {
@@ -57,11 +57,15 @@ const EmployeeForm = () => {
           }
         );
       } else {
-        await axios.post("http://localhost:5000/api/employees", employeeData, {
-          headers: {
-            Authorization: `Bearer ${token}`,
-          },
-        });
+        await axios.post(
+          "https://prodigy-fs-02-z3wk.onrender.com/api/employees",
+          employeeData,
+          {
+            headers: {
+              Authorization: `Bearer ${token}`,
+            },
+          }
+        );
       }
       navigate("/employees");
     } catch (error) {
